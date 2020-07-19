@@ -1,21 +1,77 @@
 <html>
      <head>
        <title> Home Page </title>
+<style>
+body { 
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav article ads"
+    "footer footer footer";
+  grid-template-rows: 80px 1fr 70px;  
+  grid-template-columns: 20% 1fr 15%;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  height: 100vh;
+  margin: 0;
+  }  
+nav, div {
+  padding: 1.2em;
+  background: #F377B0;
+  }
+  header, footer {
+  padding: 1.2em;
+  background: #68D7F5 ;
+  }
+  
+  article{
+  padding: 1.2em;
+  background: #46E371;
+  border: 2px solid brown;
+  }
+  
+#pageHeader {
+  font-size:190%;
+  grid-area: header;
+  text-align:center;
+  }
+#pageFooter {
+  grid-area: footer;
+  }
+#mainArticle { 
+  grid-area: article;
+  }
+#mainNav { 
+  grid-area: nav; 
+  }
+#siteAds { 
+  grid-area: ads; 
+  } 
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body { 
+    grid-template-areas: 
+      "header"
+      "article"
+      "ads"
+      "nav"
+      "footer";
+    grid-template-rows: 80px 1fr 70px 1fr 70px;  
+    grid-template-columns: 1fr;
+ }
+}
+</style>
+
      </head>
 
       <body>
-           <h1> Description with H1 </h1>
-           
-              Hello there, This is Tabres am a awesome person!
-             
-              <img src="https://avatars1.githubusercontent.com/u/22323203?v=4">
-  
-           <ul>   
-                   <li> <a href="https://github.com">This is a link to GitHub!</a> </li>
-                   <li> Introduction</li>
-                   <li>About Myself</li>
-           </ul>
-
-
-          </body>
+        <header id="pageHeader"><b><em>Tabrez Ahmed</em></b></header>
+           <article id="mainArticle">
+                  Article Image<br> 
+                <img src="https://avatars1.githubusercontent.com/u/22323203?v=4" >
+           </article>
+           <nav id="mainNav">Nav</nav>
+           <div id="siteAds">Ads</div>
+           <footer id="pageFooter"><a href="https://github.com" target="_blank">This is a link to GitHub!</a></footer>   
+     </body>
 </html>
